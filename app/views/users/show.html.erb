@@ -1,27 +1,27 @@
-	<body>
-		<div class='container'>
-			<a href="../users/"><button type='button' class='btn btn-primary inline'> Users' Index </button></a>
-			<button type='button' class='btn btn-danger inline'><%= link_to "Sign out", signout_path, method: "delete" %></button>
+<div class='container'>
+	<%= link_to "Users' Index", users_path, class:'btn btn-primary inline' %>
+	<!-- the below Users' Index link code also works - - commenting out, but keeping it in the file for the sake of notes-to-self -->
+	<!-- <a href="../users/"><button type='button' class='btn btn-primary inline'> Users' Index </button></a> -->
+	<%= link_to "Sign out", signout_path, class:'btn btn-danger inline', method: "delete" %>
 
-			<h1> Information regarding <%=@user.name %></h1>
+	<h1> Information regarding <%=@user.name %></h1>
 
-			<p> <b>User: </b> <%= @user.name %></p>
-			<p> <b>E-mail:</b> <%= @user.email %></p>
-			<div class='clear'></div>
-			<div class='left'>
-				<h4> Comments for <%= @user.name %></h4>
-				<% @user_comments.each do |comment| %>
-					<p class=> "<%= comment.content %>"</p>
-					<p class='author'> &nbsp; -- &nbsp; <%= comment.author %> </p>
-				<% end %>
-			</div><!--end of div left-->
-			<div class='right'>
-				<h4>Leave Your Comments Here</h4>
-				<%= simple_form_for [@user, @comment], :html => { :class => 'form-horizontal' } do |f| %>
-				  <%= f.input :author, :input_html => { :class => "span4" }, label: "Your Name" %>
-				  <%= f.input :content, :input_html => { :class => "span4" }, label: "Your Comment" %>
-				  <%= f.button :submit, :class => 'btn btn-success', label: "Submit" %>
-				<% end %>
-			</div><!--end of div left-->
-		</div><!--end of div container-->
-	</body>
+	<p> <b>User: </b> <%= @user.name %></p>
+	<p> <b>E-mail:</b> <%= @user.email %></p>
+	<div class='clear'></div>
+	<div class='left'>
+		<h4> Comments for <%= @user.name %></h4>
+		<% @user_comments.each do |comment| %>
+			<p class=> "<%= comment.content %>"</p>
+			<p class='author'> &nbsp; -- &nbsp; <%= comment.author %> </p>
+		<% end %>
+	</div><!--end of div left-->
+	<div class='right'>
+		<h4>Leave Your Comments Here</h4>
+		<%= simple_form_for [@user, @comment], :html => { :class => 'form-horizontal' } do |f| %>
+		  <%= f.input :author, :input_html => { :class => "span4" }, label: "Your Name" %>
+		  <%= f.input :content, :input_html => { :class => "span4" }, label: "Your Comment" %>
+		  <%= f.button :submit, 'Submit Comment', :class => 'btn btn-success' %>
+		<% end %>
+	</div><!--end of div left-->
+</div><!--end of div container-->

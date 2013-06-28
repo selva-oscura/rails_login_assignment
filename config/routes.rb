@@ -4,7 +4,6 @@ RailsControllersIntermediateLoginProject::Application.routes.draw do
     match "/signup", :to => 'users#new'
     match "/signin", :to => 'sessions#new'
     match "/signout", :to => 'sessions#destroy'
-
     resources :users do
       resources :comments, :only => :create
     end
