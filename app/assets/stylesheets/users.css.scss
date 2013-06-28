@@ -1,0 +1,30 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.right{
+	width:50%;
+	float:right;
+	padding: 12px 0px 0px 0px;
+}
+
+.left{
+	width:40%;
+	float:left;
+	border-width:5px;
+	border-style:double;
+	margin:12px 0px;
+	padding:12px;
+}
+
+.clear{
+	clear:both;
+}
+.author{
+	text-transform: capitalize;
+	font-size:12px;
+}
+
+.btn a{	
+	color:white;
+}
